@@ -7,3 +7,6 @@ Structuring the SAPUI5 app using the layout patterns that comply with the latest
 (b):Master page based on the sap.f.DynamicPage control.
 (c):Detail page based on the sap.uxap.ObjectPageLayout control.
 (d):Further Pages using sap.f.DynamicPage control
+
+
+IDE: SAP Web IDE (Cloud Trial)
