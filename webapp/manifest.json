@@ -14,7 +14,6 @@
 			"version": "1.38.11"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -33,14 +32,14 @@
 		"supportedThemes": [
 			"sap_hcb",
 			"sap_belize"
-
 		]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "com.demo.Z_Fiori2_Inital_App.view.App",
-			"type": "XML"
+			"type": "XML",
+			"async": true,
+			"id": "fcl"
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
@@ -50,6 +49,9 @@
 				"sap.m": {},
 				"sap.f": {}
 			}
+		},
+		"config": {
+			"fullWidth": true
 		},
 		"contentDensities": {
 			"compact": true,
@@ -64,9 +66,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -78,17 +82,25 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteApp",
-				"pattern": "RouteApp",
-				"target": ["TargetApp"]
-			}],
+			"routes": [
+				{
+					"name": "RouteApp",
+					"pattern": "RouteApp",
+					"target": [
+						"TargetApp"
+					]
+				}
+			],
 			"targets": {
 				"TargetApp": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
 					"viewName": "App"
+				},
+				"Master": {
+					"viewType": "XML",
+					"viewName": "Master"
 				}
 			}
 		}
