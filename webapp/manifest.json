@@ -75,9 +75,8 @@
 		},
 		"routing": {
 			"config": {
-				"routerClass": "sap.m.routing.Router",
+				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
-				"async": true,
 				"viewPath": "com.demo.Z_Fiori2_Inital_App.view",
 				"controlAggregation": "pages",
 				"controlId": "idAppControl",
@@ -101,11 +100,13 @@
 				},
 				"Master": {
 					"viewType": "XML",
-					"viewName": "Master"
+					"viewName": "Master",
+					"controlAggregation": "beginColumnPages"
 				},
 				"Detail": {
 					"viewType": "XML",
-					"viewName": "Detail"
+					"viewName": "Detail",
+					"controlAggregation": "midColumnPages"
 				}
 			}
 		}
