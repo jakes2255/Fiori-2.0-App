@@ -10,8 +10,12 @@ sap.ui.define([
 			this.oRouter = this.oOwnerComponent.getRouter();
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 		},
-		onRouteMatched: function (oEvent){
-			
+		onRouteMatched: function (oEvent) {
+			var sRouteName = oEvent.getParameter("name"),
+				oArguments = oEvent.getParameter("arguments");
+			// Save the current route name
+			this.currentRouteName = sRouteName;
+			this.currentProduct = oArguments.product;
 		},
 		onExit: function () {
 			this.oRouter.detachRouteMatched(this.onRouteMatched, this);
