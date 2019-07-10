@@ -17,6 +17,17 @@ sap.ui.define([
 			this.currentRouteName = sRouteName;
 			this.currentProduct = oArguments.product;
 		},
+		onStateChanged: function (oEvent) {
+			var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow"),
+				sLayout = oEvent.getParameter("layout");
+			// Replace the URL with the new layout if a navigation arrow was used
+			if (bIsNavigationArrow) {
+				this.oRouter.navTo(this.currentRouteName, {
+					layout: sLayout,
+					product: this.currentProduct
+				}, true);
+			}
+		},
 		onExit: function () {
 			this.oRouter.detachRouteMatched(this.onRouteMatched, this);
 		}
