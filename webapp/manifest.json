@@ -86,27 +86,28 @@
 			},
 			"routes": [
 				{
-					"name": "RouteApp",
-					"pattern": "RouteApp",
+					"pattern": ":layout:",
+					"name": "master",
 					"target": [
-						"TargetApp"
+						"master",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{product}/{layout}",
+					"name": "detail",
+					"target": [
+						"master",
+						"detail"
 					]
 				}
 			],
 			"targets": {
-				"TargetApp": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewName": "App"
-				},
-				"Master": {
-					"viewType": "XML",
+				"master": {
 					"viewName": "Master",
 					"controlAggregation": "beginColumnPages"
 				},
-				"Detail": {
-					"viewType": "XML",
+				"detail": {
 					"viewName": "Detail",
 					"controlAggregation": "midColumnPages"
 				}
