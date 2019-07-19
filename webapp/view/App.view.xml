@@ -1,5 +1,5 @@
 <mvc:View controllerName="com.demo.Z_Fiori2_Inital_App.controller.App" displayBlock="true" height="100%" xmlns="sap.f"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m">
 	<FlexibleColumnLayout id="flexibleColumnLayout" stateChange=".onStateChanged" backgroundDesign="Solid" layout="{/layout}"/>
-	<Link text="Show Branch URL" press="handleLinkPress"/>
+	<m:Link text="Show Branch URL" press="handleLinkPress"/>
 </mvc:View>
