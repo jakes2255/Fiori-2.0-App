@@ -1,7 +1,8 @@
 sap.ui.define([
+	"sap/m/MessageBox",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/mvc/Controller"
-], function (JSONModel, Controller) {
+], function (MessageBox, JSONModel, Controller) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.App", {
@@ -30,6 +31,9 @@ sap.ui.define([
 		},
 		onExit: function () {
 			this.oRouter.detachRouteMatched(this.onRouteMatched, this);
+		},
+		handleLinkPress: function (evt) {
+			MessageBox.alert("/Fiori-2.0-App/tree/expBranch");
 		}
 	});
 });
