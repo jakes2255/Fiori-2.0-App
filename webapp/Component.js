@@ -44,6 +44,7 @@ sap.ui.define([
 			oRouter.initialize();
 		},
 		_onBeforeRouteMatched: function(oEvent) {
+			debugger;
 			var oModel = this.getModel(),
 				sLayout = oEvent.getParameters().arguments.layout;
 
