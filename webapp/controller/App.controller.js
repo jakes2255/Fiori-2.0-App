@@ -31,9 +31,6 @@ sap.ui.define([
 		},
 		onExit: function () {
 			this.oRouter.detachRouteMatched(this.onRouteMatched, this);
-		},
-		handleLinkPress: function (evt) {
-			MessageBox.alert("https://github.com/jakes2255/Fiori-2.0-App/blob/expBranch/README.md");
 		}
 	});
 });
