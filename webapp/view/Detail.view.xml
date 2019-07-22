@@ -4,6 +4,9 @@
 		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
 				<actions>
 					<m:ToggleButton text="Edit" type="Emphasized" press=".onEditToggleButtonPress"/>
 					<m:Button text="Delete" type="Transparent"/>
