@@ -21,7 +21,6 @@ sap.ui.define([
 		},
 
 		_onProductMatched: function (oEvent) {
-			//debugger;
 			this._product = oEvent.getParameter("arguments").product || this._product || "0";
 			this.getView().bindElement({
 				path: "/ProductCollection/" + this._product,
