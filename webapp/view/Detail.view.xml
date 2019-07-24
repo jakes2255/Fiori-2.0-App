@@ -19,16 +19,19 @@
 			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
 				<f:Avatar 
 					src="https://sapui5.hana.ondemand.com/{products>ProductPicUrl}"
-					displaySize="L" displayShape="Square" class="sapUiTinyMarginEnd"></f:Avatar>
+					displaySize="L" displayShape="Square" class="sapUiTinyMarginEnd">
+				</f:Avatar>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label text="Main Category" design="Bold"/>
 					<m:Text text="{products>MainCategory}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Subcategory"/>
+					<m:Label text="Subcategory" design="Bold"/>
+					<m:Text text="{products>Category}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Price"/>
+					<m:Label text="Price" design="Bold"/>
+					<m:ObjectNumber number="{products>CurrencyCode} {products>Price}" emphasized="false"/>
 				</m:VBox>
 			</m:FlexBox>
 		</headerContent>
