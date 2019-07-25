@@ -52,8 +52,11 @@
 								columnsM="1">
 								<form:content>
 									<m:Label text="Product ID"/>
+									<m:Text text="{products>ProductId}"/>
 									<m:Label text="Description"/>
+									<m:Text text="{products>Description}"/>
 									<m:Label text="Supplier"/>
+									<m:Text text="{products>SupplierName}"/>
 								</form:content>
 							</form:SimpleForm>
 						</blocks>
