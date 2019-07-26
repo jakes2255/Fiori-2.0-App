@@ -9,6 +9,8 @@ Structuring the SAPUI5 app using the layout patterns that comply with the latest
 (d):Further Pages using sap.f.DynamicPage control
 
 
-IDE: SAP Web IDE (Cloud Trial)
+## IDE: SAP Web IDE (Cloud Trial)
 
-# New Branch Created for Experiments.
+Thank you,
+Arun Jacob
+
