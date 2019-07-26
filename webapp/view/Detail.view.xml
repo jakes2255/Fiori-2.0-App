@@ -7,6 +7,10 @@
 				<expandedHeading>
 					<m:Title text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
 				</expandedHeading>
+				<snappedHeading>
+					<m:Text text=" snappedHeading is an aggregation under class:sap.uxap.ObjectPageDynamicHeaderTitle.\n 
+						It shows content when the ObjectPage Dynamic Header Title is collapsed" />
+				</snappedHeading>
 				<actions>
 					<m:ToggleButton text="Edit" type="Emphasized" press=".onEditToggleButtonPress"/>
 					<m:Button text="Delete" type="Transparent"/>
