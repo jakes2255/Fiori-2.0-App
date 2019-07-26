@@ -14,3 +14,11 @@ IDE: SAP Web IDE (Cloud Trial)
 # New Branch Created for Experiments.
 
 This branch contains experiments not necessarily related to the Flexible Colum Layout/ Fiori 2.0 Object Page.
+
+Examples are :-</br>
+1. Link at the bottom of App.view.xml</br>
+2. URL Helper at the bottom of App.view.xml</br>
+3. Attempted Merge Operations(In Progress)</br>
+
+Thank you,</br>
+Arun Jacob
