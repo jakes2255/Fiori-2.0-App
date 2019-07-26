@@ -13,4 +13,7 @@
 	<m:Link
 				text="New Branch created for Experiments"
 				press="handleLinkPress" />
+<!--	<m:Link
+			text="Using URL Helper function"
+			press="handleUrlPress" href="https://www.sap.com/index.html" target="_blank"/>-->
 </mvc:View>
