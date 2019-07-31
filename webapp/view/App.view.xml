@@ -1,4 +1,19 @@
-<mvc:View controllerName="com.demo.Z_Fiori2_Inital_App.controller.App" displayBlock="true" height="100%" xmlns="sap.f"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m">
-	<FlexibleColumnLayout id="flexibleColumnLayout" stateChange=".onStateChanged" backgroundDesign="Solid" layout="{/layout}"/>
+<mvc:View
+	controllerName="com.demo.Z_Fiori2_Inital_App.controller.App"
+	displayBlock="true"
+	height="100%"
+	xmlns="sap.f"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<FlexibleColumnLayout
+		id="flexibleColumnLayout"
+		stateChange=".onStateChanged"
+		backgroundDesign="Solid"
+		layout="{/layout}"/>
+	<m:Link
+				text="New Branch created for Experiments"
+				press="handleLinkPress" />
+<!--	<m:Link
+			text="Using URL Helper function"
+			press="handleUrlPress" href="https://www.sap.com/index.html" target="_blank"/>-->
 </mvc:View>
