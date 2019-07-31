@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox"
+], function (Controller,MessageBox) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.Detail", {
@@ -19,7 +20,6 @@ sap.ui.define([
 			this.oRouter.getRoute("master").attachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
 		},
-
 		_onProductMatched: function (oEvent) {
 			this._product = oEvent.getParameter("arguments").product || this._product || "0";
 			this.getView().bindElement({
