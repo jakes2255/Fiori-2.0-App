@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageBox"
-], function (Controller,MessageBox) {
+	"sap/m/MessageBox",
+	"sap/f/library"
+], function (Controller,MessageBox, fioriLibrary) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.Detail", {
@@ -19,6 +20,13 @@ sap.ui.define([
 
 			this.oRouter.getRoute("master").attachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
+			this.oRouter.getRoute("detailDetail").attachPatternMatched(this._onProductMatched, this);
+		},
+		onSupplierPress: function (oEvent) {
+			var supplierPath = oEvent.getSource().getBindingContext("products").getPath(),
+				supplier = supplierPath.split("/").slice(-1).pop();
+
+			this.oRouter.navTo("detailDetail", {layout: fioriLibrary.LayoutType.ThreeColumnsMidExpanded, supplier: supplier, product: this._product});
 		},
 		_onProductMatched: function (oEvent) {
 			this._product = oEvent.getParameter("arguments").product || this._product || "0";
