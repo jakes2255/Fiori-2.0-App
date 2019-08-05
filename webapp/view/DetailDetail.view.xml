@@ -11,7 +11,7 @@
 		<header>
 			<DynamicPageHeader>
 				<content>
-					<m:Title text="Sample Text" wrapping="true" class="sapUiTinyMarginEnd"/>
+					
 				</content>
 			</DynamicPageHeader>
 		</header>
