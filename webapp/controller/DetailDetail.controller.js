@@ -11,9 +11,19 @@ sap.ui.define([
 		 * @memberOf com.demo.Z_Fiori2_Inital_App.view.DetailDetail
 		 */
 		onInit: function () {
-
+			var oOwnerComponent = this.getOwnerComponent();
+			this.oRouter = oOwnerComponent.getRouter();
+			this.oModel = oOwnerComponent.getModel();
+			this.oRouter.getRoute("detailDetail").attachPatternMatched(this._onPatternMatch, this);
 		},
-
+		_onPatternMatch: function (oEvent) {
+			this._supplier = oEvent.getParameter("arguments").supplier || this._supplier || "0";
+			this._product = oEvent.getParameter("arguments").product || this._product || "0";
+			this.getView().bindElement({
+				path: "/ProductCollectionStats/Filters/1/values/" + this._supplier,
+				model: "products"
+			});
+		}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
