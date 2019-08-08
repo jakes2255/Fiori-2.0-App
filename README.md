@@ -11,6 +11,9 @@ Structuring the SAPUI5 app using the layout patterns that comply with the latest
 
 ## IDE: SAP Web IDE (Cloud Trial)
 
+## Feature Branch :+1:
+Feature branch included and later merged with master
+
 Thank you,</br>
 Arun Jacob:relaxed:
 
