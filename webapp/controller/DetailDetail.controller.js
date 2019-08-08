@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/f/library"
+], function (Controller, fioriLibrary) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.DetailDetail", {
@@ -23,6 +24,9 @@ sap.ui.define([
 				path: "/ProductCollectionStats/Filters/1/values/" + this._supplier,
 				model: "products"
 			});
+		},
+		handleAboutPress: function(){
+			this.oRouter.navTo("page2", {layout:fioriLibrary.LayoutType.EndColumnFullScreen});
 		},
 		onExit: function () {
 			this.oRouter.getRoute("detailDetail").detachPatternMatched(this._onPatternMatch, this);
