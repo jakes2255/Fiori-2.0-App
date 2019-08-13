@@ -1,10 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel",
+	"sap/f/FlexibleColumnLayoutSemanticHelper",
 	"sap/f/library",
 	"sap/ui/Device",
 	"com/demo/Z_Fiori2_Inital_App/model/models"
-], function (UIComponent,JSONModel, fioriLibrary, Device, models) {
+], function (UIComponent,JSONModel, FlexibleColumnLayoutSemanticHelper, fioriLibrary, Device, models) {
 	"use strict";
 
 	return UIComponent.extend("com.demo.Z_Fiori2_Inital_App.Component", {
@@ -42,6 +43,16 @@ sap.ui.define([
 			oRouter = this.getRouter();
 			oRouter.attachBeforeRouteMatched(this._onBeforeRouteMatched, this);
 			oRouter.initialize();
+		},
+
+		getHelper: function () {
+			return this._getFcl().then(function(oFCL) {
+				var oSettings = {
+					defaultTwoColumnLayoutType: fioriLibrary.LayoutType.TwoColumnsMidExpanded,
+					defaultThreeColumnLayoutType: fioriLibrary.LayoutType.ThreeColumnsMidExpanded
+				};
+				return (FlexibleColumnLayoutSemanticHelper.getInstanceFor(oFCL, oSettings));
+			});
 		},
 		_onBeforeRouteMatched: function(oEvent) {
 			debugger;
