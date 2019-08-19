@@ -64,6 +64,7 @@ sap.ui.define([
 			oModel.setProperty("/layout", sLayout);
 		},
 		_getFcl: function () {
+			//promise to be checked whether it works in the IE or not.
 			return new Promise(function(resolve, reject) {
 				var oFCL = this.getRootControl().byId('flexibleColumnLayout');
 				if (!oFCL) {
