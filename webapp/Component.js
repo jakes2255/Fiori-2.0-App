@@ -55,16 +55,26 @@ sap.ui.define([
 			});
 		},
 		_onBeforeRouteMatched: function(oEvent) {
-			debugger;
 			var oModel = this.getModel(),
 				sLayout = oEvent.getParameters().arguments.layout;
-
 			// If there is no layout parameter, set a default layout (normally OneColumn)
 			if (!sLayout) {
 				sLayout = fioriLibrary.LayoutType.OneColumn;
 			}
-
 			oModel.setProperty("/layout", sLayout);
+		},
+		_getFcl: function () {
+			return new Promise(function(resolve, reject) {
+				var oFCL = this.getRootControl().byId('flexibleColumnLayout');
+				if (!oFCL) {
+					this.getRootControl().attachAfterInit(function(oEvent) {
+						resolve(oEvent.getSource().byId('flexibleColumnLayout'));
+					}, this);
+					return;
+				}
+				resolve(oFCL);
+
+			}.bind(this));
 		}
 	});
 });
