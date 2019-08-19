@@ -16,5 +16,5 @@ Feature branch included and later merged with master</br>
 -- introducing another change in Feature branch.
 
 Thank you,</br>
-Arun Jacob:relaxed:
+Arun Jacob
 
