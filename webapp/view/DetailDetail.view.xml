@@ -2,6 +2,26 @@
 	controllerName="com.demo.Z_Fiori2_Inital_App.controller.DetailDetail" xmlns:html="http://www.w3.org/1999/xhtml">
 	<DynamicPage toggleHeaderOnTitleClick="false">
 		<title>
+			<navigationActions>
+				<m:OverflowToolbarButton
+					type="Transparent"
+					icon="sap-icon://full-screen"
+					press=".handleFullScreen"
+					tooltip="Enter Full Screen Mode"
+					visible="{= ${/actionButtonsInfo/endColumn/fullScreen} !== null }"/>
+				<m:OverflowToolbarButton
+					type="Transparent"
+					icon="sap-icon://exit-full-screen"
+					press=".handleExitFullScreen"
+					tooltip="Exit Full Screen Mode"
+					visible="{= ${/actionButtonsInfo/endColumn/exitFullScreen} !== null }"/>
+				<m:OverflowToolbarButton
+					type="Transparent"
+					icon="sap-icon://decline"
+					press=".handleClose"
+					tooltip="Close column"
+					visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+			</navigationActions>
 			<DynamicPageTitle >
 				<heading>
 					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
