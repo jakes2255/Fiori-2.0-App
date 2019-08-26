@@ -1,6 +1,10 @@
 # Fiori-2.0-App
+![alt text](https://img.shields.io/badge/Fiori-2.0-blue "Fiori 2.0")
+![alt text](https://img.shields.io/badge/Object-Page-yellow "Object Page")
+![alt text](https://img.shields.io/badge/Dynamic-Layout-yellowgreen "Dynamic Layout")
 
-Ref:https://sapui5.hana.ondemand.com/#/topic/c4de2df385174e58a689d9847c7553bd</br>
+### Ref:
+https://sapui5.hana.ondemand.com/#/topic/c4de2df385174e58a689d9847c7553bd</br>
 Structuring the SAPUI5 app using the layout patterns that comply with the latest SAP Fiori design guidelines.</br>
 
 (a):Three-column layout with sap.f.FlexibleColumnLayout control.</br>
