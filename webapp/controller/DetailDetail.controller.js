@@ -1,7 +1,6 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/mvc/Controller"
-], function (JSONModel, Controller) {
+], function (Controller) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.DetailDetail", {
@@ -24,28 +23,6 @@ sap.ui.define([
 				path: "/ProductCollectionStats/Filters/1/values/" + this._supplier,
 				model: "products"
 			});
-		},
-		handleAboutPress: function(){
-			//this.oRouter.navTo("page2", {layout:fioriLibrary.LayoutType.EndColumnFullScreen});
-			var oNextUIState;
-			this.oOwnerComponent.getHelper().then(function (oHelper) {
-				oNextUIState = oHelper.getNextUIState(3);
-				this.oRouter.navTo("page2", {layout: oNextUIState.layout});
-			}.bind(this));
-		},
-		handleFullScreen: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/endColumn/fullScreen");
-			this.oRouter.navTo("detailDetail", {layout: sNextLayout, product: this._product, supplier: this._supplier});
-		},
-
-		handleExitFullScreen: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/endColumn/exitFullScreen");
-			this.oRouter.navTo("detailDetail", {layout: sNextLayout, product: this._product, supplier: this._supplier});
-		},
-
-		handleClose: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/endColumn/closeColumn");
-			this.oRouter.navTo("detail", {layout: sNextLayout, product: this._product});
 		},
 		onExit: function () {
 			this.oRouter.getRoute("detailDetail").detachPatternMatched(this._onPatternMatch, this);

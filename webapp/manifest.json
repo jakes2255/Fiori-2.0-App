@@ -85,12 +85,6 @@
 			},
 			"routes": [
 				{
-					"pattern": "page2",
-					"name": "page2",
-					"target": "AboutPage",
-					"layout": "EndColumnFullScreen"
-				},
-				{
 					"pattern": ":layout:",
 					"name": "master",
 					"target": [
@@ -114,7 +108,7 @@
 						"detail",
 						"detailDetail"
 					]
-				}				
+				}
 			],
 			"targets": {
 				"master": {
@@ -127,10 +121,6 @@
 				},
 				"detailDetail": {
 					"viewName": "DetailDetail",
-					"controlAggregation": "endColumnPages"
-				},
-				"AboutPage": {
-					"viewName": "AboutPage",
 					"controlAggregation": "endColumnPages"
 				}
 			}
