@@ -56,17 +56,10 @@ sap.ui.define([
 		},
 		_onBeforeRouteMatched: function(oEvent) {
 			var oModel = this.getModel(),
-				sLayout = oEvent.getParameters().arguments.layout,
-				oNextUIState;
+				sLayout = oEvent.getParameters().arguments.layout;
 			// If there is no layout parameter, set a default layout (normally OneColumn)
 			if (!sLayout) {
-				//sLayout = fioriLibrary.LayoutType.OneColumn;
-				//default one column is replaced by the Semantic Helper class
-				this.getHelper().then(function(oHelper) {
-					oNextUIState = oHelper.getNextUIState(0);
-					oModel.setProperty("/layout", oNextUIState.layout);
-				});
-				return;
+				sLayout = fioriLibrary.LayoutType.OneColumn;
 			}
 			oModel.setProperty("/layout", sLayout);
 		},
