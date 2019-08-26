@@ -4,8 +4,9 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	'sap/ui/model/Sorter',
-	'sap/m/MessageBox'
-], function (JSONModel, Controller, Filter, FilterOperator, Sorter, MessageBox) {
+	'sap/m/MessageBox',
+	'sap/f/library'
+], function (JSONModel, Controller, Filter, FilterOperator, Sorter, MessageBox, fioriLibrary) {
 	"use strict";
 
 	return Controller.extend("com.demo.Z_Fiori2_Inital_App.controller.Master", {
@@ -50,18 +51,8 @@ sap.ui.define([
 		onListItemPress: function (oEvent) {
 			//debugger;
 			var productPath = oEvent.getSource().getBindingContext("products").getPath(),
-				product = productPath.split("/").slice(-1).pop(),
-				oNextUIState;
-			this.getOwnerComponent().getHelper().then(function (oHelper) {
-				oNextUIState = oHelper.getNextUIState(1);
-				this.oRouter.navTo("detail", {
-					layout: oNextUIState.layout,
-					product: product
-				});
-			}.bind(this));
-			//We get the next layout from the semantic helper rather than hard coding them ourselves.
-			//this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: product});
-			
+				product = productPath.split("/").slice(-1).pop();
+			this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: product});
 		}
 
 		/**

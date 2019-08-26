@@ -27,19 +27,8 @@ sap.ui.define([
 		},
 		onSupplierPress: function (oEvent) {
 			var supplierPath = oEvent.getSource().getBindingContext("products").getPath(),
-				supplier = supplierPath.split("/").slice(-1).pop(),
-				oNextUIState;
-
-			this.oOwnerComponent.getHelper().then(function (oHelper) {
-				oNextUIState = oHelper.getNextUIState(2);
-				this.oRouter.navTo("detailDetail", {
-					layout: oNextUIState.layout,
-					supplier: supplier,
-					product: this._product
-				});
-			}.bind(this));
-
-			//this.oRouter.navTo("detailDetail", {layout: fioriLibrary.LayoutType.ThreeColumnsMidExpanded, supplier: supplier, product: this._product});
+				supplier = supplierPath.split("/").slice(-1).pop();
+			this.oRouter.navTo("detailDetail", {layout: fioriLibrary.LayoutType.ThreeColumnsMidExpanded, supplier: supplier, product: this._product});
 		},
 		_onProductMatched: function (oEvent) {
 			this._product = oEvent.getParameter("arguments").product || this._product || "0";
@@ -48,24 +37,11 @@ sap.ui.define([
 				model: "products"
 			});
 		},
-
 		onEditToggleButtonPress: function() {
 			var oObjectPage = this.getView().byId("ObjectPageLayout"),
 				bCurrentShowFooterState = oObjectPage.getShowFooter();
 
 			oObjectPage.setShowFooter(!bCurrentShowFooterState);
-		},
-		handleFullScreen: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/fullScreen");
-			this.oRouter.navTo("detail", {layout: sNextLayout, product: this._product});
-		},
-		handleExitFullScreen: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/exitFullScreen");
-			this.oRouter.navTo("detail", {layout: sNextLayout, product: this._product});
-		},
-		handleClose: function () {
-			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/closeColumn");
-			this.oRouter.navTo("master", {layout: sNextLayout});
 		},
 		onExit: function () {
 			this.oRouter.getRoute("master").detachPatternMatched(this._onProductMatched, this);
